@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PREM STORE — Premium iOS, Android, Bypass & Certificate Mods</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+body {
+  background: #0a0a0f;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ============ NAVBAR ============ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: rgba(10, 10, 15, 0.95);
+  border-bottom: 1px solid #1f1f2e;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #ff3b6b, #ff8c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.nav-links a, .nav-links button {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.nav-links a:hover, .nav-links button:hover {
+  color: #ff3b6b;
+  background: #12121a;
+}
+
+.btn-login {
+  border: 1px solid #ff3b6b !important;
+  color: #ff3b6b !important;
+}
+
+.btn-signup {
+  background: #ff3b6b !important;
+  color: #fff !important;
+}
+
+.btn-signup:hover {
+  background: #ff5580 !important;
+  color: #fff !important;
+}
+
+.creator-link { color: #ff8c00 !important; }
+
+.user-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: #12121a;
+  border-radius: 20px;
+  border: 1px solid #1f1f2e;
+  font-size: 13px;
+}
+
+.user-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #ff3b6b, #ff8c00);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* ============ PAGES ============ */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ============ HERO ============ */
+.hero {
+  text-align: center;
+  padding: 90px 20px 60px;
+  background: radial-gradient(ellipse at top, #1a0a1f 0%, #0a0a0f 70%);
+  position: relative;
+}
+
+.badge {
+  background: #1f1f2e;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #ff8c00;
+  border: 1px solid #2a2a3e;
+  display: inline-block;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 56px);
+  margin: 25px 0;
+  font-weight: 900;
+  background: linear-gradient(90deg, #fff, #ff3b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #999;
+  font-size: 16px;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+
+.stat h3 { font-size: 32px; color: #ff3b6b; }
+.stat span { color: #888; font-size: 13px; }
+
+/* ============ SECTIONS ============ */
+.section { padding: 70px 40px; }
+
+.section h2 { font-size: clamp(24px, 3vw, 36px); margin-bottom: 10px; }
+.subtitle { color: #888; margin-bottom: 40px; }
+
+/* Categories */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+}
+
+.category-card {
+  background: linear-gradient(135deg, #1a1a24, #12121a);
+  padding: 35px 20px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  border: 1px solid #1f1f2e;
+  transition: all 0.3s;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.category-card:hover {
+  border-color: #ff3b6b;
+  transform: translateY(-5px);
+}
+
+/* Products */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 22px;
+}
+
+.product-card {
+  background: #12121a;
+  border: 1px solid #1f1f2e;
+  border-radius: 12px;
+  padding: 22px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.product-card:hover {
+  border-color: #ff3b6b;
+  transform: translateY(-5px);
+}
+
+.product-card h3 { font-size: 17px; margin-bottom: 8px; }
+
+.product-card p {
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.product-price {
+  font-size: 24px;
+  font-weight: 900;
+  color: #ff3b6b;
+}
+
+.product-price small {
+  color: #666;
+  font-size: 12px;
+  margin-left: 5px;
+  font-weight: 400;
+}
+
+.in-stock {
+  color: #4ade80;
+  font-size: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.in-stock::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+}
+
+.buy-btn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  background: linear-gradient(90deg, #ff3b6b, #ff8c00);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.buy-btn:hover { opacity: 0.9; }
+
+/* Reviews */
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.review {
+  background: #12121a;
+  padding: 22px;
+  border-radius: 12px;
+  border: 1px solid #1f1f2e;
+  font-size: 14px;
+}
+
+.review .stars { color: #ffc107; margin-bottom: 8px; }
+.review .author { color: #888; font-size: 12px; margin-top: 8px; }
+
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #1a0a1f, #0a0a0f);
+}
+
+.cta h2 { font-size: clamp(28px, 4vw, 42px); margin-bottom: 15px; }
+.cta p { color: #999; margin-bottom: 30px; }
+
+.btn-primary {
+  display: inline-block;
+  background: linear-gradient(90deg, #ff3b6b, #ff8c00);
+  color: #fff;
+  padding: 15px 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  transition: transform 0.2s;
+}
+
+.btn-primary:hover { transform: scale(1.05); }
+
+/* ============ AUTH ============ */
+.auth-container {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: radial-gradient(ellipse at top, #1a0a1f 0%, #0a0a0f 70%);
+}
+
+.auth-box {
+  background: #12121a;
+  border: 1px solid #1f1f2e;
+  border-radius: 16px;
+  padding: 45px 38px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.auth-box h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 26px;
+  background: linear-gradient(90deg, #fff, #ff3b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.auth-box input {
+  width: 100%;
+  padding: 13px 16px;
+  background: #0a0a0f;
+  border: 1px solid #1f1f2e;
+  border-radius: 8px;
+  color: #fff;
+  margin-bottom: 14px;
+  font-size: 14px;
+  transition: border 0.2s;
+}
+
+.auth-box input:focus {
+  outline: none;
+  border-color: #ff3b6b;
+}
+
+.auth-box button.main-btn {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(90deg, #ff3b6b, #ff8c00);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.auth-box button.main-btn:hover { opacity: 0.9; }
+
+.social-login {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.social-btn {
+  flex: 1;
+  padding: 12px 8px;
+  border-radius: 8px;
+  border: 1px solid #1f1f2e;
+  background: #0a0a0f;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.social-btn:hover { transform: translateY(-2px); }
+.social-btn.facebook:hover { border-color: #1877f2; }
+.social-btn.google:hover { border-color: #ea4335; }
+.social-btn.twitter:hover { border-color: #1da1f2; }
+
+.divider {
+  text-align: center;
+  color: #666;
+  margin: 22px 0;
+  font-size: 12px;
+  position: relative;
+}
+
+.divider::before, .divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 42%;
+  height: 1px;
+  background: #1f1f2e;
+}
+
+.divider::before { left: 0; }
+.divider::after { right: 0; }
+
+.auth-link {
+  text-align: center;
+  margin-top: 20px;
+  color: #888;
+  font-size: 13px;
+}
+
+.auth-link a {
+  color: #ff3b6b;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.auth-link a:hover { text-decoration: underline; }
+
+/* Code input */
+.code-inputs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.code-inputs input {
+  width: 50px;
+  height: 55px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+}
+
+/* ============ CREATOR PANEL ============ */
+.creator-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+}
+
+.creator-container h1 {
+  margin-bottom: 10px;
+  color: #ff8c00;
+  font-size: 28px;
+}
+
+.creator-container .sub { color: #888; margin-bottom: 30px; font-size: 14px; }
+
+.creator-box {
+  background: #12121a;
+  border: 1px solid #1f1f2e;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.form-group { margin-bottom: 16px; }
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: #ccc;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+  width: 100%;
+  padding: 11px 14px;
+  background: #0a0a0f;
+  border: 1px solid #1f1f2e;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: #ff8c00;
+}
+
+.form-group textarea { min-height: 80px; resize: vertical; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.creator-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.creator-actions button {
+  padding: 11px 28px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-add {
+  background: linear-gradient(90deg, #ff3b6b, #ff8c00);
+  color: #fff;
+}
+
+.btn-cancel {
+  background: #1f1f2e;
+  color: #fff;
+}
+
+.product-item {
+  background: #0a0a0f;
+  border: 1px solid #1f1f2e;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.product-item-info h3 { font-size: 15px; margin-bottom: 4px; }
+.product-item-info p { color: #888; font-size: 12px; }
+.product-item-info .price { color: #ff3b6b; font-weight: 700; font-size: 16px; margin-top: 4px; }
+
+.product-item-actions { display: flex; gap: 8px; }
+
+.product-item-actions button {
+  padding: 7px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.btn-edit { background: #ff8c00; color: #fff; }
+.btn-delete { background: #ff3b6b; color: #fff; }
+
+/* ============ TOAST NOTIFICATION ============ */
+.toast {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  background: #12121a;
+  border: 1px solid #1f1f2e;
+  border-left: 4px solid #ff3b6b;
+  padding: 15px 22px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  z-index: 9999;
+  transform: translateX(400px);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  max-width: 320px;
+}
+
+.toast.show { transform: translateX(0); }
+.toast.success { border-left-color: #4ade80; }
+.toast.error { border-left-color: #ff3b6b; }
+.toast.info { border-left-color: #1da1f2; }
+
+/* ============ MODAL ============ */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.75);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-overlay.show { display: flex; }
+
+.modal {
+  background: #12121a;
+  border: 1px solid #1f1f2e;
+  border-radius: 16px;
+  padding: 35px 30px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.modal h3 { margin-bottom: 10px; font-size: 22px; }
+.modal p { color: #888; margin-bottom: 25px; font-size: 14px; }
+
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.modal-yes { background: linear-gradient(90deg, #ff3b6b, #ff8c00); color: #fff; }
+.modal-no { background: #1f1f2e; color: #fff; }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .navbar { padding: 14px 18px; flex-wrap: wrap; gap: 10px; }
+  .nav-links { gap: 4px; }
+  .nav-links a, .nav-links button { padding: 6px 10px; font-size: 12px; }
+  .section { padding: 50px 20px; }
+  .hero { padding: 60px 20px 40px; }
+  .stats { gap: 30px; }
+  .auth-box { padding: 30px 22px; }
+  .creator-container { padding: 20px; }
+  .form-row { grid-template-columns: 1fr; }
+  .product-item { flex-direction: column; align-items: flex-start; }
+}
+
+/* Loading spinner */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar">
+  <div class="logo" onclick="navigate('home')">PREM STORE</div>
+  <div class="nav-links" id="navLinks"></div>
+</nav>
+
+<!-- ============ HOME PAGE ============ -->
+<div id="page-home" class="page active">
+  <section class="hero">
+    <span class="badge">Premium mods marketplace</span>
+    <h1>The vault for iOS, Android & beyond.</h1>
+    <p>Premium iOS mods, Android mods, bypass solutions, and signing certificates — verified, updated, and delivered to your inbox in seconds. Prices in USD and GEL.</p>
+    <div class="stats">
+      <div class="stat"><h3>2.4M+</h3><span>Keys delivered</span></div>
+      <div class="stat"><h3>&lt; 60s</h3><span>Avg. delivery</span></div>
+      <div class="stat"><h3>4.9/5</h3><span>Buyer rating</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Browse by category</h2>
+    <p class="subtitle">Find what you need, fast</p>
+    <div class="category-grid">
+      <div class="category-card">📱 iOS Mods</div>
+      <div class="category-card">🤖 Android Mods</div>
+      <div class="category-card">🔓 Bypass</div>
+      <div class="category-card">📜 Certificates</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Featured drops</h2>
+    <p class="subtitle">This week's bestsellers</p>
+    <div id="featured-grid" class="product-grid"></div>
+  </section>
+
+  <section class="section">
+    <h2>Trending now</h2>
+    <p class="subtitle">Most wanted this month</p>
+    <div id="trending-grid" class="product-grid"></div>
+  </section>
+
+  <section class="section">
+    <h2>Loved by buyers</h2>
+    <p class="subtitle">2.4M orders, 4.9 stars</p>
+    <div class="review-grid">
+      <div class="review">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        "სწრაფი მიწოდება, ყველაფერი იდეალურად!"
+        <div class="author">— Giorgi K.</div>
+      </div>
+      <div class="review">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        "საუკეთესო ფასები ბაზარზე!"
+        <div class="author">— Nika M.</div>
+      </div>
+      <div class="review">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        "ნამდვილი გასაღებები, არაფერი საეჭვო!"
+        <div class="author">— Luka T.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to unlock your next mod?</h2>
+    <p>Join 1.8M buyers who get instant delivery and verified keys on every order.</p>
+    <button class="btn-primary" onclick="navigate('signup')">დაიწყე ახლა</button>
+  </section>
+</div>
+
+<!-- ============ LOGIN PAGE ============ -->
+<div id="page-login" class="page">
+  <div class="auth-container">
+    <div class="auth-box">
+      <h2>შესვლა</h2>
+      <div id="login-form">
+        <input type="email" id="login-email" placeholder="ელ-ფოსტა" autocomplete="email">
+        <input type="password" id="login-password" placeholder="პაროლი" autocomplete="current-password">
+        <button class="main-btn" onclick="handleLogin()">შესვლა</button>
+      </div>
+      
+      <div class="divider">ან გააგრძელე</div>
+      
+      <div class="social-login">
+        <button class="social-btn facebook" onclick="socialLogin('Facebook')">📘 Facebook</button>
+        <button class="social-btn google" onclick="socialLogin('Google')">🔍 Google</button>
+        <button class="social-btn twitter" onclick="socialLogin('Twitter')">🐦 Twitter</button>
+      </div>
+      
+      <div class="auth-link">
+        არ გაქვს ანგარიში? <a onclick="navigate('signup')">დარეგისტრირდი</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SIGNUP PAGE ============ -->
+<div id="page-signup" class="page">
+  <div class="auth-container">
+    <div class="auth-box">
+      <h2>რეგისტრაცია</h2>
+      <div id="signup-form">
+        <input type="text" id="signup-name" placeholder="სახელი" autocomplete="name">
+        <input type="email" id="signup-email" placeholder="ელ-ფოსტა" autocomplete="email">
+        <input type="password" id="signup-password" placeholder="პაროლი (მინ. 6 სიმბოლო)" autocomplete="new-password">
+        <input type="password" id="signup-password2" placeholder="გაიმეორე პაროლი" autocomplete="new-password">
+        <button class="main-btn" onclick="handleSignup()">რეგისტრაცია</button>
+      </div>
+      
+      <div class="divider">ან დარეგისტრირდი</div>
+      
+      <div class="social-login">
+        <button class="social-btn facebook" onclick="socialLogin('Facebook')">📘 Facebook</button>
+        <button class="social-btn google" onclick="socialLogin('Google')">🔍 Google</button>
+        <button class="social-btn twitter" onclick="socialLogin('Twitter')">🐦 Twitter</button>
+      </div>
+      
+      <div class="auth-link">
+        უკვე გაქვს ანგარიში? <a onclick="navigate('login')">შესვლა</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ EMAIL VERIFICATION PAGE ============ -->
+<div id="page-verify" class="page">
+  <div class="auth-container">
+    <div class="auth-box">
+      <h2>ელ-ფოსტის დადასტურება</h2>
+      <p style="color:#888; text-align:center; margin-bottom:20px; font-size:13px;">
+        კოდი გაიგზავნა: <strong id="verify-email-display" style="color:#ff3b6b;"></strong>
+      </p>
+      <div class="code-inputs" id="code-inputs">
+        <input type="text" maxlength="1" inputmode="numeric">
+        <input type="text" maxlength="1" inputmode="numeric">
+        <input type="text" maxlength="1" inputmode="numeric">
+        <input type="text" maxlength="1" inputmode="numeric">
+        <input type="text" maxlength="1" inputmode="numeric">
+        <input type="text" maxlength="1" inputmode="numeric">
+      </div>
+      <button class="main-btn" onclick="verifyCode()">დადასტურება</button>
+      <div class="auth-link">
+        არ მოგივიდა? <a onclick="resendCode()">თავიდან გაგზავნე</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CREATOR PANEL ============ -->
+<div id="page-creator" class="page">
+  <div class="creator-container">
+    <h1>🎨 Creator Panel</h1>
+    <p class="sub">პროდუქტების დამატება, რედაქტირება და წაშლა</p>
+    
+    <div class="creator-box">
+      <h3 id="form-title" style="margin-bottom:20px; font-size:18px;">➕ ახალი პროდუქტის დამატება</h3>
+      <div class="form-group">
+        <label>პროდუქტის სახელი</label>
+        <input type="text" id="prod-name" placeholder="მაგ: Premium iOS Mod">
+      </div>
+      <div class="form-group">
+        <label>აღწერა</label>
+        <textarea id="prod-desc" placeholder="მოკლე აღწერა..."></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>ფასი (USD $)</label>
+          <input type="number" id="prod-price-usd" placeholder="10" step="0.01">
+        </div>
+        <div class="form-group">
+          <label>ფასი (GEL ₾)</label>
+          <input type="number" id="prod-price-gel" placeholder="27" step="0.01">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>კატეგორია</label>
+        <select id="prod-category">
+          <option>iOS Mods</option>
+          <option>Android Mods</option>
+          <option>Bypass</option>
+          <option>Certificates</option>
+        </select>
+      </div>
+      <div class="creator-actions">
+        <button class="btn-add" onclick="saveProduct()" id="save-btn">დამატება</button>
+        <button class="btn-cancel" onclick="resetForm()" id="cancel-btn" style="display:none;">გაუქმება</button>
+      </div>
+    </div>
+    
+    <h3 style="margin-bottom:15px;">📦 არსებული პროდუქტები</h3>
+    <div id="creator-product-list"></div>
+  </div>
+</div>
+
+<!-- ============ TOAST ============ -->
+<div id="toast" class="toast"></div>
+
+<!-- ============ MODAL ============ -->
+<div id="modal" class="modal-overlay">
+  <div class="modal">
+    <h3 id="modal-title">დარწმუნებული ხარ?</h3>
+    <p id="modal-text">ეს ქმედება ვერ დაბრუნდება.</p>
+    <div class="modal-buttons">
+      <button class="modal-yes" id="modal-yes">დიახ</button>
+      <button class="modal-no" onclick="closeModal()">გაუქმება</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   DATA & STATE
+   ============================================================ */
+
+const CREATOR_EMAIL = "premshop743@gmail.com";
+
+// Default products
+let products = JSON.parse(localStorage.getItem('prem_products') || 'null') || [
+  { id: 1, name: "Android Mod Balanced", desc: "A balanced Android mod with the core features most players need at a great price.", priceUSD: 10, priceGEL: 27, category: "Android Mods", featured: true, trending: true },
+  { id: 2, name: "iOS Mod Flagship", desc: "The flagship iOS mod — premium features, frequent updates, and rock-solid stability.", priceUSD: 13, priceGEL: 35, category: "iOS Mods", featured: true, trending: true },
+  { id: 3, name: "Bypass Solution", desc: "A trusted bypass solution that keeps you undetected across updates.", priceUSD: 18, priceGEL: 45, category: "Bypass", featured: false, trending: true },
+  { id: 4, name: "1-Year Certificate", desc: "A genuine 1-year signing certificate for sideloading and long-term installs.", priceUSD: 15, priceGEL: 35, category: "Certificates", featured: false, trending: true },
+  { id: 5, name: "Android Mod Premium", desc: "A premium Android mod focused on performance and a clean, stable experience.", priceUSD: 10, priceGEL: 27, category: "Android Mods", featured: false, trending: true },
+  { id: 6, name: "iOS Mod Standard", desc: "A premium iOS mod focused on smooth performance and a clean, stable experience.", priceUSD: 15, priceGEL: 15, category: "iOS Mods", featured: false, trending: true },
+  { id: 7, name: "Lightweight Android Cheat", desc: "A lightweight Android cheat with the essentials at the lowest price.", priceUSD: 3, priceGEL: 7, category: "Android Mods", featured: false, trending: true }
+];
+
+// Current state
+let currentUser = JSON.parse(localStorage.getItem('prem_user') || 'null');
+let pendingUser = null;
+let generatedCode = null;
+let editingProductId = null;
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+
+function navigate(pageName) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const target = document.getElementById('page-' + pageName);
+  if (target) target.classList.add('active');
+  window.scrollTo(0, 0);
+  renderNav();
+  
+  // Re-render products when going home
+  if (pageName === 'home') {
+    renderProducts();
+  }
+  if (pageName === 'creator') {
+    renderCreatorList();
+  }
+}
+
+function renderNav() {
+  const nav = document.getElementById('navLinks');
+  
+  if (currentUser) {
+    const initials = currentUser.name ? currentUser.name.charAt(0).toUpperCase() : '?';
+    nav.innerHTML = `
+      <a onclick="navigate('home')">მთავარი</a>
+      <a onclick="navigate('creator')" class="creator-link">🎨 Creator</a>
+      <div class="user-badge">
+        <div class="user-avatar">${initials}</div>
+        <span>${currentUser.name || currentUser.email}</span>
+      </div>
+      <button onclick="logout()">გასვლა</button>
+    `;
+  } else {
+    nav.innerHTML = `
+      <a onclick="navigate('home')">მთავარი</a>
+      <a onclick="navigate('creator')" class="creator-link">🎨 Creator</a>
+      <button class="btn-login" onclick="navigate('login')">შესვლა</button>
+      <button class="btn-signup" onclick="navigate('signup')">რეგისტრაცია</button>
+    `;
+  }
+}
+
+/* ============================================================
+   TOAST NOTIFICATIONS
+   ============================================================ */
+
+let toastTimeout = null;
+function showToast(msg, type = 'info') {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.className = 'toast ' + type;
+  setTimeout(() => toast.classList.add('show'), 10);
+  
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3500);
+}
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+
+let modalCallback = null;
+function showModal(title, text, onYes) {
+  document.getElementById('modal-title').textContent = title;
+  document.getElementById('modal-text').textContent = text;
+  document.getElementById('modal').classList.add('show');
+  modalCallback = onYes;
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('show');
+  modalCallback = null;
+}
+
+document.getElementById('modal-yes').onclick = () => {
+  if (modalCallback) modalCallback();
+  closeModal();
+};
+
+/* ============================================================
+   AUTH - LOGIN
+   ============================================================ */
+
+function handleLogin() {
+  const email = document.getElementById('login-email').value.trim();
+  const password = document.getElementById('login-password').value;
+  
+  if (!email || !email.includes('@')) {
+    showToast('შეიყვანე სწორი ელ-ფოსტა', 'error');
+    return;
+  }
+  if (!password || password.length < 6) {
+    showToast('პაროლი უნდა იყოს მინ. 6 სიმბოლო', 'error');
+    return;
+  }
+  
+  // Check stored users
+  const users = JSON.parse(localStorage.getItem('prem_users') || '[]');
+  const user = users.find(u => u.email === email && u.password === password);
+  
+  if (!user) {
+    showToast('მომხმარებელი ვერ მოიძებნა. დარეგისტრირდი.', 'error');
+    return;
+  }
+  
+  currentUser = { name: user.name, email: user.email };
+  localStorage.setItem('prem_user', JSON.stringify(currentUser));
+  showToast('კეთილი იყოს შენი დაბრუნება, ' + user.name + '!', 'success');
+  document.getElementById('login-email').value = '';
+  document.getElementById('login-password').value = '';
+  navigate('home');
+}
+
+/* ============================================================
+   AUTH - SIGNUP
+   ============================================================ */
+
+function handleSignup() {
+  const name = document.getElementById('signup-name').value.trim();
+  const email = document.getElementById('signup-email').value.trim();
+  const pw1 = document.getElementById('signup-password').value;
+  const pw2 = document.getElementById('signup-password2').value;
+  
+  if (!name || name.length < 2) {
+    showToast('შეიყვანე სახელი (მინ. 2 სიმბოლო)', 'error');
+    return;
+  }
+  if (!email || !email.includes('@') || !email.includes('.')) {
+    showToast('შეიყვანე სწორი ელ-ფოსტა', 'error');
+    return;
+  }
+  if (!pw1 || pw1.length < 6) {
+    showToast('პაროლი უნდა იყოს მინ. 6 სიმბოლო', 'error');
+    return;
+  }
+  if (pw1 !== pw2) {
+    showToast('პაროლები არ ემთხვევა', 'error');
+    return;
+  }
+  
+  // Check if user exists
+  const users = JSON.parse(localStorage.getItem('prem_users') || '[]');
+  if (users.find(u => u.email === email)) {
+    showToast('ეს ელ-ფოსტა უკვე რეგისტრირებულია', 'error');
+    return;
+  }
+  
+  // Save pending user
+  pendingUser = { name, email, password: pw1 };
+  
+  // Generate 6-digit code
+  generatedCode = String(Math.floor(100000 + Math.random() * 900000));
+  
+  // === SIMULATION: Email code ===
+  console.log('%c=== EMAIL VERIFICATION ===', 'color: #ff3b6b; font-size: 16px; font-weight: bold;');
+  console.log('%cTo: ' + email, 'color: #ff8c00; font-size: 14px;');
+  console.log('%cYour code: ' + generatedCode, 'color: #4ade80; font-size: 20px; font-weight: bold;');
+  console.log('%c========================', 'color: #ff3b6b;');
+  
+  // Show in toast too
+  showToast('📧 კოდი გაიგზავნა! შეამოწმე კონსოლი (F12)', 'info');
+  
+  // In real deployment: this would call your backend API
+  // Example:
+  // fetch('/api/send-code', { method: 'POST', body: JSON.stringify({ email }) })
+  
+  document.getElementById('verify-email-display').textContent = email;
+  document.getElementById('signup-name').value = '';
+  document.getElementById('signup-email').value = '';
+  document.getElementById('signup-password').value = '';
+  document.getElementById('signup-password2').value = '';
+  
+  // Clear code inputs
+  document.querySelectorAll('#code-inputs input').forEach(i => i.value = '');
+  document.querySelector('#code-inputs input').focus();
+  
+  navigate('verify');
+}
+
+/* ============================================================
+   EMAIL VERIFICATION
+   ============================================================ */
+
+// Auto-focus next input
+document.querySelectorAll('#code-inputs input').forEach((inp, idx, arr) => {
+  inp.addEventListener('input', (e) => {
+    if (e.target.value && idx < arr.length - 1) {
+      arr[idx + 1].focus();
+    }
+  });
+  inp.addEventListener('keydown', (e) => {
+    if (e.key === 'Backspace' && !e.target.value && idx > 0) {
+      arr[idx - 1].focus();
+    }
+  });
+});
+
+function verifyCode() {
+  const inputs = document.querySelectorAll('#code-inputs input');
+  let entered = '';
+  inputs.forEach(i => entered += i.value);
+  
+  if (entered.length !== 6) {
+    showToast('შეიყვანე 6-ნიშნა კოდი', 'error');
+    return;
+  }
+  
+  if (entered !== generatedCode) {
+    showToast('❌ არასწორი კოდი', 'error');
+    inputs.forEach(i => i.value = '');
+    inputs[0].focus();
+    return;
+  }
+  
+  // Success
+  const users = JSON.parse(localStorage.getItem('prem_users') || '[]');
+  users.push(pendingUser);
+  localStorage.setItem('prem_users', JSON.stringify(users));
+  
+  currentUser = { name: pendingUser.name, email: pendingUser.email };
+  localStorage.setItem('prem_user', JSON.stringify(currentUser));
+  
+  showToast('✅ რეგისტრაცია წარმატებით დასრულდა!', 'success');
+  
+  pendingUser = null;
+  generatedCode = null;
+  
+  setTimeout(() => navigate('home'), 800);
+}
+
+function resendCode() {
+  if (!pendingUser) {
+    showToast('სესია ამოიწურა, თავიდან სცადე', 'error');
+    navigate('signup');
+    return;
+  }
+  generatedCode = String(Math.floor(100000 + Math.random() * 900000));
+  console.log('%c=== RESENT CODE ===', 'color: #ff3b6b; font-weight: bold;');
+  console.log('%cNew code: ' + generatedCode, 'color: #4ade80; font-size: 20px; font-weight: bold;');
+  showToast('📧 ახალი კოდი გაიგზავნა (კონსოლი)', 'info');
+}
+
+/* ============================================================
+   SOCIAL LOGIN (DEMO)
+   ============================================================ */
+
+function socialLogin(provider) {
+  showToast(`${provider} ავტორიზაცია დემო რეჟიმშია. რეალური ინტეგრაცია საჭიროებს backend-ს.`, 'info');
+  
+  // Real implementation would look like:
+  // window.location.href = `/auth/${provider.toLowerCase()}`;
+  
+  // Demo: auto-login as social user
+  setTimeout(() => {
+    currentUser = { 
+      name: provider + ' User', 
+      email: `user@${provider.toLowerCase()}.com` 
+    };
+    localStorage.setItem('prem_user', JSON.stringify(currentUser));
+    showToast(`✅ ${provider}-ით შესვლა წარმატებულია!`, 'success');
+    navigate('home');
+  }, 1200);
+}
+
+function logout() {
+  currentUser = null;
+  localStorage.removeItem('prem_user');
+  showToast('გამოხვედი სისტემიდან', 'info');
+  navigate('home');
+}
+
+/* ============================================================
+   PRODUCTS RENDERING
+   ============================================================ */
+
+function productCardHTML(p) {
+  return `
+    <div class="product-card">
+      <div class="in-stock">In stock</div>
+      <h3>${escapeHtml(p.name)}</h3>
+      <p>${escapeHtml(p.desc)}</p>
+      <div class="product-price">
+        $${p.priceUSD} <small>${p.priceGEL}₾</small>
+      </div>
+      <button class="buy-btn" onclick="buyProduct(${p.id})">ყიდვა</button>
+    </div>
+  `;
+}
+
+function renderProducts() {
+  const featuredGrid = document.getElementById('featured-grid');
+  const trendingGrid = document.getElementById('trending-grid');
+  
+  if (!featuredGrid || !trendingGrid) return;
+  
+  const featured = products.filter(p => p.featured);
+  const trending = products.filter(p => p.trending);
+  
+  featuredGrid.innerHTML = featured.length 
+    ? featured.map(productCardHTML).join('')
+    : '<p style="color:#666;">პროდუქტები არ არის</p>';
+  
+  trendingGrid.innerHTML = trending.length
+    ? trending.map(productCardHTML).join('')
+    : '<p style="color:#666;">პროდუქტები არ არის</p>';
+}
+
+function buyProduct(id) {
+  if (!currentUser) {
+    showToast('გთხოვ ჯერ შეხვიდე სისტემაში', 'error');
+    setTimeout(() => navigate('login'), 800);
+    return;
+  }
+  const p = products.find(x => x.id === id);
+  showToast(`🛒 "${p.name}" დაემატა კალათაში`, 'success');
+}
+
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, m => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[m]));
+}
+
+/* ============================================================
+   CREATOR PANEL
+   ============================================================ */
+
+function renderCreatorList() {
+  const list = document.getElementById('creator-product-list');
+  if (!list) return;
+  
+  if (!products.length) {
+    list.innerHTML = '<p style="color:#666;">პროდუქტები არ არის. დაამატე პირველი!</p>';
+    return;
+  }
+  
+  list.innerHTML = products.map(p => `
+    <div class="product-item">
+      <div class="product-item-info">
+        <h3>${escapeHtml(p.name)}</h3>
+        <p>${escapeHtml(p.desc).substring(0, 80)}...</p>
+        <div class="price">$${p.priceUSD} / ${p.priceGEL}₾ — ${p.category}</div>
+      </div>
+      <div class="product-item-actions">
+        <button class="btn-edit" onclick="editProduct(${p.id})">✏️ რედაქტირება</button>
+        <button class="btn-delete" onclick="deleteProduct(${p.id})">🗑️ წაშლა</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function saveProduct() {
+  // Only allow creator email
+  if (!currentUser) {
+    showToast('გთხოვ ჯერ შეხვიდე სისტემაში', 'error');
+    return;
+  }
+  
+  if (currentUser.email !== CREATOR_EMAIL) {
+    showToast('❌ მხოლოდ Creator-ს აქვს წვდომა', 'error');
+    return;
+  }
+  
+  const name = document.getElementById('prod-name').value.trim();
+  const desc = document.getElementById('prod-desc').value.trim();
+  const priceUSD = parseFloat(document.getElementById('prod-price-usd').value);
+  const priceGEL = parseFloat(document.getElementById('prod-price-gel').value);
+  const category = document.getElementById('prod-category').value;
+  
+  if (!name) return showToast('შეიყვანე სახელი', 'error');
+  if (!desc) return showToast('შეიყვანე აღწერა', 'error');
+  if (!priceUSD || priceUSD <= 0) return showToast('შეიყვანე სწორი USD ფასი', 'error');
+  if (!priceGEL || priceGEL <= 0) return showToast('შეიყვანე სწორი GEL ფასი', 'error');
+  
+  if (editingProductId) {
+    // Edit existing
+    const idx = products.findIndex(p => p.id === editingProductId);
+    if (idx !== -1) {
+      products[idx] = { ...products[idx], name, desc, priceUSD, priceGEL, category };
+    }
+    showToast('✅ პროდუქტი განახლდა', 'success');
+    editingProductId = null;
+  } else {
+    // Add new
+    const newId = Math.max(0, ...products.map(p => p.id)) + 1;
+    products.push({ id: newId, name, desc, priceUSD, priceGEL, category, featured: false, trending: false });
+    showToast('✅ პროდუქტი დაემატა', 'success');
+  }
+  
+  saveProducts();
+  resetForm();
+  renderCreatorList();
+  renderProducts();
+}
+
+function editProduct(id) {
+  if (!currentUser || currentUser.email !== CREATOR_EMAIL) {
+    showToast('❌ მხოლოდ Creator-ს აქვს წვდომა', 'error');
+    return;
+  }
+  
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+  
+  document.getElementById('prod-name').value = p.name;
+  document.getElementById('prod-desc').value = p.desc;
+  document.getElementById('prod-price-usd').value = p.priceUSD;
+  document.getElementById('prod-price-gel').value = p.priceGEL;
+  document.getElementById('prod-category').value = p.category;
+  
+  editingProductId = id;
+  document.getElementById('form-title').textContent = '✏️ პროდუქტის რედაქტირება';
+  document.getElementById('save-btn').textContent = 'განახლება';
+  document.getElementById('cancel-btn').style.display = 'inline-block';
+  
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function deleteProduct(id) {
+  if (!currentUser || currentUser.email !== CREATOR_EMAIL) {
+    showToast('❌ მხოლოდ Creator-ს აქვს წვდომა', 'error');
+    return;
+  }
+  
+  const p = products.find(x => x.id === id);
+  showModal(
+    'წაშლა?',
+    `დარწმუნებული ხარ, რომ გინდა "${p.name}" წაშალო?`,
+    () => {
+      products = products.filter(x => x.id !== id);
+      saveProducts();
+      renderCreatorList();
+      renderProducts();
+      showToast('🗑️ პროდუქტი წაიშალა', 'info');
+    }
+  );
+}
+
+function resetForm() {
+  document.getElementById('prod-name').value = '';
+  document.getElementById('prod-desc').value = '';
+  document.getElementById('prod-price-usd').value = '';
+  document.getElementById('prod-price-gel').value = '';
+  document.getElementById('prod-category').selectedIndex = 0;
+  editingProductId = null;
+  document.getElementById('form-title').textContent = '➕ ახალი პროდუქტის დამატება';
+  document.getElementById('save-btn').textContent = 'დამატება';
+  document.getElementById('cancel-btn').style.display = 'none';
+}
+
+function saveProducts() {
+  localStorage.setItem('prem_products', JSON.stringify(products));
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+
+renderNav();
+renderProducts();
+renderCreatorList();
+
+// Global error handler
+window.addEventListener('error', (e) => {
+  console.error('Error:', e.error);
+});
+
+console.log('%c🚀 PREM STORE ready!', 'color: #ff3b6b; font-size: 18px; font-weight: bold;');
+console.log('%cCreator email: ' + CREATOR_EMAIL, 'color: #ff8c00; font-size: 14px;');
+console.log('%c💡 Test: შექმენი ანგარიში ' + CREATOR_EMAIL + '-ით რომ Creator Panel გამოიყენო', 'color: #4ade80; font-size: 13px;');
+</script>
+</body>
+</html>
